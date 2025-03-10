@@ -1,0 +1,1265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bg-color: #020202;
+    --second-bg-color: #c3bfbf;
+    --text-color: #fff;
+    --main-color: #7b4bb7;
+    --font-neon-text-shadow:0 0 10px rgba(18,247,255,0.3),
+    0 0 20px rgba(18,247,255,0.3),
+    0 0 30px rgba(18,247,255,0.3),
+    0 0 40px rgba(18,247,255,0.3),
+    0 0 70px rgba(18,247,255,0.3),
+    0 0 80px rgba(18,247,255,0.3),
+    0 0 100px rgba(18,247,255,0.3),
+    0 0 150px rgba(18,247,255,0.3);
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+}
+
+html::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+
+/* header section ------------------------------------------------------*/
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(0, 0, 0, 0.7);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.navbar a{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a:active{
+    color: #91daf3;
+    border: #858989 ;
+}
+
+#menu-icon{
+    font-size: 1.8rem;
+    z-index: 10001;
+    cursor: pointer;
+    background: var(--bg-color);
+    color: #12f7ff;
+    display: none;
+}
+
+/* home section ----------------------------------------------------------*/
+
+.main-container .content{
+    color: rgb(241, 234, 234);
+    width: 40%;
+    min-height: 100px;
+}
+.image-content {
+    width: 350px; /* Set the size of the image container */
+    height: 350px;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image fits within the circle */
+    box-shadow: 0 14px 30px rgba(255, 255, 255, 0.842); /* Soft shadow for effect */
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    animation: zoomIn 1.5s ease-out; /* Apply zoom-in effect when the page loads */
+}
+.content h1{
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span{
+    color: #12f7ff;
+    text-shadow: 0 0 10px rgb(46, 196, 229);
+}
+
+.content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span{
+    color: #12f7ff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgb(46, 196, 229);
+    position: relative;
+    transition: 0.3s linear;
+}
+
+.typewriter span::before{
+    content: "Developer";
+    animation: words 15s infinite;
+}
+
+.typewriter span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid rgb(253, 252, 252);
+    animation:  cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words {
+    0%, 33%{
+        content: " UI/UX Developer";
+    }
+    34%, 66%{
+        content: " UI Designer";
+    }
+    
+}
+
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid rgb(193, 166, 123);
+    border-radius: 50%;
+    color:rgb(109,67, 0);
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+.hire{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 50%;
+}
+
+
+/* Space for content so it doesn't go under the header */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 120px; /* To push below the header */
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    height:80vh;
+}
+
+/* Left Side - Text */
+.text-content {
+    flex: 1;
+    text-align: left;
+    padding-left: 50px;
+}
+
+/* Introduction Heading */
+.intro-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #91daf3;
+    margin-bottom: 10px;
+}
+
+/* Sub-heading */
+.sub-heading {
+    font-size: 40px;
+    font-weight: lighter;
+    color: #91daf3;
+    margin-bottom: 20px;
+}
+
+/* Portfolio Text */
+.portfolio-text {
+    font-size: 20px;
+    color: #ddd;
+    font-style: italic;
+}
+/* Image container style */
+/* .image {
+    width: 350px; 
+    height: 350px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    animation: zoomIn 1.5s ease-out; 
+} */
+
+
+/* Right Side - Profile Image */
+.image-content {
+   /* Image container style */
+
+    width: 300px; /* Set the size of the image container */
+    height: 300px;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image fits within the circle */
+    box-shadow: 0 4px 10px rgba(227, 126, 126, 0.1); /* Soft shadow for effect */
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    margin-right: 90px;
+    animation: zoomIn 1.5s ease-out; /* Apply zoom-in effect when the page loads */
+}
+
+
+/* Profile Image Animation */
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    animation: floatAnimation 3s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Hover Effect */
+.profile-image:hover {
+    transform: scale(1.1);
+    animation: none; /* Stops floating when hovered */
+}
+
+/* Navigation */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.content .btn{
+    flex-direction: row;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 15px;
+    color: #91daf3;
+    border: 2px solid #91daf3;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+
+
+  
+
+
+/* Resume Button */
+/* .resume-btn {
+    background-color: rgb(134, 134, 134);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.resume-btn:hover {
+    background-color: rgb(187, 182, 182);
+    transform: scale(1.05);
+} */
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .header ul {
+        flex-direction: column;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .image-content {
+        padding-right: 0;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Responsive: Stack buttons vertically for small screens */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: 10px; /* Smaller gap for mobile */
+        align-items: center;
+    }
+}
+
+
+/* Social Icons Container */
+.social {
+    display: flex;
+    gap: 15px; /* Reduced gap for better alignment */
+    justify-content: center; /* Centers icons */
+    margin-top: 20px; /* Adds space above social icons */
+}
+
+/* Social Icons Styling */
+.social a {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Proper center alignment */
+}
+
+/* Hover Effect */
+.social a:hover {
+    background-color: rgb(62, 125, 241);
+    transform: scale(1.1);
+}
+
+/* Responsive: Stack buttons and icons neatly */
+@media (max-width: 768px) {
+    
+
+    .social {
+        flex-direction: row;
+        gap: 10px; /* Reduced gap for better fit */
+    }
+}
+/* *******about section ************/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    height: 300px;
+    width: 250px;
+   margin-left: 10px;
+   border-radius: 25px;
+}
+.about-col-2{
+    flex-basis: 60%;
+   
+}
+.sub-title{
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* education section ---------------------------------------------------*/
+
+.problem {
+    border: 2px solid #475253;
+    border-radius: 15px;
+    margin: 40px 50px; /* Shorthand for margin-top, margin-right, margin-bottom, margin-left */
+    padding: 20px;
+    background-color: #000000; /* Light background for contrast */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.problem:hover {
+    border-color: #353637; /* Darker border on hover */
+    background-color: #0a0a0a; /* Light blue shade */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Smooth shadow */
+    transform: scale(1.02); /* Slight scale-up effect */
+}
+
+.main-text{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #91daf3;
+}
+
+.main-text h2{
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.main-text span{
+    color: #fdfdfd;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+
+.education-section{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.education-box{
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #7b4bb7;
+    border-radius: 7px;
+    transition: .5s;
+}
+
+.education-box:hover{
+    transform: scale(1.1);
+}
+
+.education-box span{
+    font-size: 1.4rem;
+}
+
+.education-box span h3{
+    margin-bottom: 17px;
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+ .note{
+  
+    margin-top: 50px;
+    text-align: center;
+}
+
+.note h3{
+    font-size: 2rem;
+    font-weight: 800;
+   
+}
+ .note p{
+    margin-top: 5px;
+    font-size: 1.6rem;
+    font-weight: 400;
+   
+}
+/* Skills Section Styling */
+.skills {
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: center;
+    height: 200%;
+}
+
+
+/* Developer Section */
+.Developer h1, .Designer h1 {
+    font-size: 1.8rem;
+    color: rgb(0, 122, 255); /* Color of section titles */
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Image Containers Styling */
+.image-container, .image-containers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-container img, .image-containers img {
+    width: 120px; /* Size of the image */
+    height: 120px;
+    border-radius: 90%; /* Making the image circular */
+    object-fit: cover; /* Ensures the image covers the circular area */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect */
+.image-container img:hover, .image-containers img:hover {
+    transform: scale(1.1); /* Enlarges the image on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgb(173, 217, 254); /* Larger shadow and glowing effect */
+}
+
+/* Add additional styling to the Developer and Designer sections */
+.Developer, .Designer {
+    margin-top: 10px;
+}
+
+.Developer img, .Designer img {
+    margin-top: 10px;
+}
+
+
+/* -----portfolio------ */
+#portfolio{
+    padding: 50px 0;  
+}
+.work-list{
+    display: grid;
+    grid-template-columns :repeat(auto-fit,minmax(280px,1fr));
+    grid-gap: 30px;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+.work{
+    height: 300px;
+    width: 300px;
+    border-radius:10px;
+    position: relative;
+    overflow: hidden;
+      gap: 20px;
+      background-color: rgba(255, 255, 255, 0.116);
+  border: 2px solid rgba(255, 250, 250, 0.404);
+
+}
+.work img{
+    width: 100%;
+    border-radius:10px ;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(115, 79, 177, 0.6),#3370d1);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* gap: 15%; */
+    padding: 0 20px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight:800;
+    margin-bottom: 20px;
+}
+.link{
+    display: inline-flex;
+    margin-top: 20px;
+    gap: 20px;
+  }
+.layer a{
+    margin-top: 20px;
+    color: #010000;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    flex-direction:column;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    gap: 30px;
+}
+.work:hover img{
+   transform: scale(1.1);
+}
+.work:hover  .layer{
+    height: 100%;
+}
+.btn{
+    font-size: 15px;
+    display:block ;
+    width: fit-content;
+    border: 1px solid #31cef9;
+    padding: 14px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fcf9f9;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #1fc9e3;
+}
+/* ++++++++++++++++++++++++++++++++++++++ */
+#contact{
+    padding: 50px;
+}
+.self{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .self2{
+    display: flex;
+     margin-right: 10px;
+    height: 450px;
+  padding-right: 10px;
+  }
+  .box5{
+    height: 420px;
+    width: 420px;
+    padding-top: 20px;
+    padding-left: 10px;
+    background-color: rgba(253, 249, 249, 0.014);
+    border: 1px solid  #333;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 10px;
+  }
+  .box5 p{
+    padding-left: 10px;
+  }
+  .contact{
+    height: 390px;
+    width: 450px;
+    background-color: rgba(197, 194, 194, 0.014);
+    border: 1px solid rgba(245, 240, 240, 0.13);
+    border-radius: 15px;
+    margin-left: 17px;
+    margin-top: 10px;
+  }
+
+ 
+ 
+
+  .location{
+    margin-top: 30px;
+  } 
+  .contact-form {
+    background-color: black;
+    color:rgb(125, 123, 123);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+   
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  input[type="text"], input[type="email"], input[type="number"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  #fname::placeholder {
+    color: white;
+}
+#lname::placeholder {
+    color: white;
+}
+#message::placeholder {
+    color: white;
+}
+
+.social1 {
+    display: flex;
+align-items: center;
+margin-left: 350px;
+    margin-top: 30px;
+    gap:40px; 
+    min-height: 100px;
+}
+.social1 a {
+   
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.social1 a:hover {
+    background-color: rgb(55, 60, 146);
+    transform: scale(1.1);
+}.contact {
+    text-align: center; 
+    background-color: black;
+    color:white;
+    padding-left: 30px;
+    padding-right: 30px; 
+    text-decoration: none;
+    font-size: 16px; 
+    transition: 0.3s ease-in-out;
+    min-height: 420px;
+}
+.contact-info h5 {
+    color: rgb(73, 75, 195);
+    margin-bottom: 10px;
+}
+.contact-info p {
+    margin: 5px 0;
+}
+.custom-form {
+   width: 100%;
+    padding: 30px;
+    border-radius: 10px;  
+}
+.form-control {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: border 0.3s ease-in-out;
+}
+.form-control:focus {
+    border: 2px solid rgb(200, 204, 216);
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+.btn-custom {
+    background-color: rgb(65, 71, 241);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-custom:hover {
+    background-color: rgb(63, 24, 255);
+
+} 
+ 
+
+
+  /* Works Section Styling */
+#works {
+
+
+    padding: 50px 0;
+    text-align: center;
+}
+
+.works-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+   
+}
+
+/* Filter Section (Tabs) */
+.projects_filter ul.list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.projects_filter li {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #7b4bb7;
+    color: #7b4bb7;
+    cursor: pointer;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    flex-direction: row;
+    transition: all 0.3s ease;
+}
+
+.projects_filter li:hover,
+.projects_filter li.active {
+    background-color: rgb(0, 122, 255);
+    color: white;
+    border-color: rgb(0, 122, 255);
+}
+
+/* Content Section */
+.workcontent-section {
+    margin-top: 40px;
+
+}
+
+.workcontent {
+    display: none;
+
+}
+
+.workcontent.active {
+    display: block;
+    flex-direction: row;
+
+}
+
+.workcontent h2 {
+    font-size: 1.8rem;
+    color: rgb(50, 66, 237);
+}
+
+.workcontent p {
+    font-size: 1rem;
+    color: #eae0e0;
+}
+
+/* **************************media************************************* */
+/* For screens 1024px and below (tablets) */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar a {
+        margin-left: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .text-content {
+        padding-left: 0;
+    }
+
+    .image-content {
+        padding-right: 0;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .resume-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .social-links i {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .education-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-left: 20px;
+    }
+
+    .work {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+/* For screens 768px and below (smaller tablets and large phones) */
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+        margin-left: 2rem;
+    }
+
+    .text-content {
+        padding-left: 0;
+    }
+
+    .image-content {
+        padding-right: 0;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .social-links i {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .resume-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .social {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .education-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-left: 10px;
+    }
+
+    .work {
+        height: 220px;
+        width: 220px;
+    }
+
+    .contact-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    /* Contact form inputs */
+    .box5, .box7, .box1, .box2, .box3 {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    /* Stacking contact info */
+    .self, .self2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* For screens 480px and below (large mobile devices) */
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .image-content {
+        width: 100%;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .main-container {
+        padding: 30px;
+    }
+
+    .social-links i {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .work {
+        height: 200px;
+        width: 200px;
+    }
+
+    .resume-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .note h3 {
+        font-size: 1.6rem;
+    }
+
+    .note p {
+        font-size: 1.2rem;
+    }
+
+    /* Contact Form */
+    .box5, .box7, .box1, .box2, .box3 {
+        width: 90%;
+    }
+
+    .contact {
+        width: 90%;
+    }
+}
+
+/* For screens 320px and below (small mobile devices) */
+@media (max-width: 320px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin-left: 1rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .main-container {
+        padding: 20px;
+    }
+
+    .work {
+        height: 180px;
+        width: 180px;
+    }
+
+    .resume-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .note h3 {
+        font-size: 1.4rem;
+    }
+
+    .note p {
+        font-size: 1rem;
+    }
+
+    .social-links i {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .box5, .box7, .box1, .box2, .box3 {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+}
+/* ****************problem************ */
+/* Media Query for Mobile Devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    .problem {
+        margin: 20px; /* Reduce margin for smaller screens */
+        padding: 15px; /* Reduce padding for a more compact layout */
+        border-radius: 10px; /* Slightly smaller border-radius for mobile */
+    }
+}
+
+/* Media Query for very small screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    .problem {
+        margin: 10px; /* Further reduce margin for tiny screens */
+        padding: 10px; /* Reduce padding even more */
+        border-radius: 8px; /* Smaller border-radius for very small screens */
+    }
+}
+/* *****************contact*************** */
+/* Media Query for Mobile Devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    /* Adjust padding for contact section */
+    #contact {
+        padding: 20px;
+    }
+
+    /* Stack the elements vertically for smaller screens */
+    .self, .self2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Reduce width and height of the boxes for mobile */
+    .box5, .box7, .box1, .box2, .box3 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    /* Adjust the height of the contact box for smaller screens */
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    /* Adjust box sizes within the contact form */
+    .box5 {
+        width: 90%;
+    }
+    .box7, .box1, .box2, .box3 {
+        width: 90%;
+    }
+
+    /* Additional spacing adjustments */
+    .location {
+        margin-top: 20px;
+    }
+}
+
+/* Media Query for very small screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    /* Reduce padding and margins even further */
+    #contact {
+        padding: 10px;
+    }
+
+    /* Adjust contact form layout */
+    .self, .self2 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Adjust the size of the contact box */
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    /* Adjust width of the individual input boxes */
+    .box5, .box7, .box1, .box2, .box3 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Add spacing adjustments for mobile */
+    .location {
+        margin-top: 15px;
+    }
+}
